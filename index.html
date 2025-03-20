@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation App</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 200px;
+        }
+
+        button {
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Get Directions</h2>
+    <input id="origin" type="text" placeholder="Enter origin" />
+    <input id="destination" type="text" placeholder="Enter destination" />
+    <button onclick="getDirections()">Go</button>
+
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCElDC-o99oyH5cS2STSBRwrXR-X139d2c&libraries=places"></script>
+    <script src="app.js"></script>
+</body>
+</html>

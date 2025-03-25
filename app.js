@@ -5,7 +5,10 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById("map"), {
         center: defaultLocation,
-        zoom: 16,
+        zoom: 17,
+        minZoom: 17,
+        mapId: "706df79c8d75965d",
+        tilt: 47.5
     });
 
     directionsService = new google.maps.DirectionsService();

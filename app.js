@@ -2,13 +2,20 @@ let map, directionsService, directionsRenderer, originAutocomplete, destinationA
 
 function initMap() {
     const defaultLocation = { lat: 43.0086, lng: -81.2732 }; // UWO
+    const westernBounds = new google.maps.LatLngBounds(
+        { lat: 43.004, lng: -81.282 },
+        { lat: 43.012, lng: -81.265 }
+    );
 
     map = new google.maps.Map(document.getElementById("map"), {
         center: defaultLocation,
-        zoom: 17,
+        zoom: 20,
         minZoom: 17,
         mapId: "706df79c8d75965d",
-        tilt: 47.5
+        tilt: 47.5,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
     });
 
     directionsService = new google.maps.DirectionsService();
@@ -22,10 +29,6 @@ function initMap() {
     originAutocomplete = new google.maps.places.Autocomplete(originInput);
     destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput);
 
-    const westernBounds = new google.maps.LatLngBounds(
-        { lat: 43.004, lng: -81.282 },
-        { lat: 43.012, lng: -81.265 }
-    );
 
     originAutocomplete.setBounds(westernBounds);
     destinationAutocomplete.setBounds(westernBounds);
